@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charser="utf-8">
+    <meta name="keywords" content="tags, formularios, web">
+    <meta name="viewpoint"
+    <title>formularios</title>
+
+</head>
+<body>
+    <h1>Contato</h1>
+    <form action="" method="get">
+        <label for="iNome" >Nome:</label>
+        <input type="text" id="iNome" name="iNome" alt="Informar seu nome completo" placeholder="Seu nome" title="Informar seu nome completo" required>
+        <br>
+        <label for="ifone">Telefone:</label>
+        <input type="text" id="ifone" name="ifone" placeholder="(47) 99999-9922" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
+        title="Número de telefone precisa ser no formato (99) 9999-9999">
+        <br>
+        <label for="iEmail">Email:</label>
+        <input type="text" id="iEmail" name="Email" required>
+        <br>
+        <label for="iAssunto">Assunto:</label>
+        <input type="text" id="iAssunto" name="Assunto">
+        <br>
+        <label for="iMensagem">Mensagem:</label>
+        <textarea id="iMensagem" name="iMensagem" placeholder="Como podemos ajudar?" rows="5" cols="45"></textarea>
+        <br>
+        <hr>
+        <h2>Complemento</h2>
+        <label for="iMasculino">Sexo</label>
+        <input type="radio" id="iMasculino" name="Sexo"><label for="iMasculino">Masculino</label>&nbsp;
+        <input type="radio" id="iFeminino" name="Sexo"><label for="iFeminino">Feminino</label>&nbsp;
+        <input type="radio" id="iNoinfo" name="Sexo"><label for="iNoinfo">Prefiro não Informar</label>&nbsp;
+        <br>
+        <label for="iEscolaridade">Escolaridade</label>
+        <select id="iEscolaridade" name="Escolaridade">
+            <option value="Fundamental">Ensino Fundamental</option>
+            <option value="Medio" selected>Ensino Médio</option>
+            <option value="Superior">Ensino Superior</option>
+            <option value="Especializacao">Especialização</option>
+            <option value="Mestrado">Mestrado</option>
+            <option value="Doutorado">Doutorado</option>
+        </select>
+        <br>
+        <label for="idatanascto">Data de Nascimento</label>
+        <input type="date" id="idatanascto" name="dtnascto">
+        <br>
+        <label id="iHobby">Hobby</label>
+        <input type="checkbox" id="iLer" name="Hobby"><label for="iLer">Ler</label>&nbsp;
+        <input type="checkbox" id="iTV" name="Hobby"><label for="iTV">TV/Streamers</label>&nbsp;
+        <input type="checkbox" id="iEsporte" name="Hobby"><label for="iEsporte">Esporte</label>&nbsp;
+        <input type="checkbox" id="iGames" name="Hobby"><label for="iGames">Games</label>&nbsp;
+        <input type="checkbox" id="iOutros" name="Hobby"><label for="iOutros">Outros</label>&nbsp;
+        <br>
+        <br>
+        <button type="submit">ENVIAR</button>&nbsp;
+        <button type="reset">LIMPAR</button>&nbsp;
+
+        <br>
+
+    </form>
+
+</body>
+</html>
