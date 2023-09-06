@@ -1,0 +1,19 @@
+p{
+    color:aqua;
+    margin-bottom: 50px;
+}
+ul{
+    background-color: yellow;
+    color:black;
+    font-size: small;
+}
+body{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://images3.alphacoders.com/132/1326193.png);
+    background-size: cover;
+}
+h1{
+    text-decoration:overline;
+    margin-left: 100px;
+}
