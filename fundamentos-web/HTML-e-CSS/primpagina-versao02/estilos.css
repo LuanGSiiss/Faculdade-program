@@ -25,16 +25,22 @@ tr:hover {
     color: red;
     font-family: 'Courier New', Courier, monospace;
 }
+.caixaunidavi {
+    height: 600px;
+}
 img[src="img/UNIDAVI-foto.jpg"] {
-    width: 800px;
+    height: 500px;
 }
 img[src="img/UNIDAVI-foto.jpg"]:hover {
-    width: 900px;
+    height: 600px;
+}
+.caixaprof {
+    height: 350px;
 }
 img[src="img/Sandro-Alengar.webp"] {
-    width: 400px;
+    height: 300px;
 }
 
 img[src="img/Sandro-Alengar.webp"]:hover {
-    width: 500px;
+    height: 350px;
 }
