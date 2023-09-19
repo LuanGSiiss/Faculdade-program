@@ -1,0 +1,40 @@
+body {
+    background-color: aquamarine;
+}
+h1 {
+    color:orangered;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+}
+.dadospessoais {
+    color: rgb(24, 32, 49);
+    font-family: Arial, Helvetica, sans-serif;
+}
+th, td {
+    text-align: left;
+    border: solid 1px black;
+}
+tr:hover {
+    background-color: gray;
+    color: blue;
+    font-size: 18px;
+}
+.description {
+    background-color: aqua;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}
+img[src="img/UNIDAVI-foto.jpg"] {
+    width: 800px;
+}
+img[src="img/UNIDAVI-foto.jpg"]:hover {
+    width: 900px;
+}
+img[src="img/Sandro-Alengar.webp"] {
+    width: 400px;
+}
+
+img[src="img/Sandro-Alengar.webp"]:hover {
+    width: 500px;
+}

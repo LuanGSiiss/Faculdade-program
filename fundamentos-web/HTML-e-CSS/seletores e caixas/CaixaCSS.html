@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de caixas CSS</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        .caixa {
+            background-color: chocolate;
+            width: 300px;
+            height: auto;
+            border: 3px solid blue;
+            padding: 10px 50px;
+            margin: 5px 25px 50px 10px;
+        }
+        .limite {
+            border-style: dotted;
+            border-top: 4px;
+            background-color: bisque;
+            border-top: 2px solid red;
+            height: 100vh;
+        }
+        .caixa:hover {
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="limite">
+        <div class="caixa">
+            <h1>Exemplo de Caixas</h1>
+            <p>Importante perceber que na caixa existe também diferentes elementos como o border, margin, padding e o proprio tamnho da caixa, </p>
+        </div>
+    </div>
+
+</body>
+</html>

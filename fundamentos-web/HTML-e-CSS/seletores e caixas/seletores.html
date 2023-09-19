@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando seletores</title>
+    <style>
+        body {
+            font-size: 24px;
+            font-family:  Georgia, 'Times New Roman', Times, serif;
+        }
+        h1 {
+            font-size: 34px;
+            background-color: aquamarine;
+        }
+        #secao2 {
+            background-color: cornflowerblue;
+        }
+        .sublina {
+            text-decoration: underline;
+        }
+        .vermelho {
+            color: red;
+        }
+        img[src="img/CSS3-logo.png"] {
+            width: 400px;
+        }
+        .logo-css:hover {
+            transform: rotate(70deg);
+        }
+        .gif {
+            margin-left: 100px;
+        }
+        li:hover {
+            background-color: gray;
+            height: 35px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <section id="secao1">
+        <h1>Seção 1</h1>
+        <p>Essa seção você inicia nossa pagina e trás alguns elementos</p>
+        <ul>
+            <li>&lt;h&gt; - Cabeçalhos</li>
+            <li>&lt;p&gt; - Parágrafo</li>
+            <li>&lt;ul&gt; e &lt;li&gt; - Listas</li>
+        </ul>
+        <p class="sublina">Isso nos permite compreender melhor os seletores</p>
+    </section>
+    <section id="secao2">
+        <p>Seguimos com o combinado...</p>
+        <h1 class="sublina vermelho">Seção 2</h1>
+        <p>Essa ação complementa nossa html</p>
+        <br>
+        <img class="logo-css" src="img/CSS3-logo.png" style="margin-left: 100px;">
+        <img class="gif" src="img/what.webp">
+
+    </section>  
+</body>
+</html>
