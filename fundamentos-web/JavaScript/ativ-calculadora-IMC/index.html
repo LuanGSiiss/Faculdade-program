@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de indice de massa corporal</title>
+    <meta name="author" content="Luan Gerber Siiss">
+    <script src="calcu.js"></script>
+</head>
+<body>
+    <h1>Calculadora de Massa Corporal</h1>
+    <p style="font-size: large;">Informe os seus dados corporais para fazermos os calculos.</p>
+    <br>
+    <label for="inome">Nome: </label>
+    <input type="text" id="inome" name="inome" placeholder="João Bernardo" alt="Seu nome" required>
+    <br>
+    <label for="ipeso">Peso Corporal (Kg): </label>
+    <input type="number" id="ipeso" name="ipeso" placeholder="68" alt="Seu Peso Corporal" required>
+    <br>
+    <label for="ialtura">Altura (Metros): </label>
+    <input type="number" id="ialtura" name="ialtura" placeholder="1,92" alt="Sua Altura" required>
+    <br>
+    <br>
+    <button type="button" onclick="calcularIMC()">Calcular IMC</button>
+    <p id="resultadoIMC"></p>
+    <br>
+    <button type="button" onclick="classificacao()">Classificação</button>
+    <p id="classificar"></p>
+</body>
+</html>

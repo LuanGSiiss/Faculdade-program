@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <meta name="author" content="Luan Gerber Siiss">
+    <script src="logica.js"></script>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <p>Por padrão está a tabuada de 1 até 10</p>
+    <br>
+    <p>Se quiser escolher até onde vai a tabuada, aperte "Sim", se não, continue</p>
+    <button type="button" onclick="comescolha()">Sim</button>
+    <br>
+    <br>
+    <div id="comescolha"></div>
+    <br>
+    <label for="inum">Número da tabuada</label>
+    <input type="number" id="inum" name="inum" placeholder="5" alt="número para calculo de tabuada" required>
+    <br>
+    <br>
+    <div id="botao">
+    <button type="button" onclick="tabuada01('inum','dresultado')">Calcular Tabuada</button>
+    </div>
+    <div id="dresultado"></div>
+</body>
+</html>

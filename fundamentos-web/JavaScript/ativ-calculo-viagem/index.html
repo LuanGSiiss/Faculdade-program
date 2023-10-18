@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculos de viagem</title>
+    <meta name="author" content="Luan Gerber Siiss">
+    <script src="java.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1 style="text-align: center;font-size: 70px;font-family: 'Times New Roman', Times, serif;color: rgb(0, 255, 0);"><strong>Autonomia de Viagem</strong></h1>
+    <br>
+    <form style="margin-left: 70px;">
+        <label for="iviagem">Viagem</label>
+        <input type="text" id="iviagem" placeholder="Lisboa" required>
+        <br>
+        <label for="ikmPer">Km percorridos</label>
+        <input type="number" id="ikmPer" placeholder="71" required>
+        <br>
+        <label for="iLitroCom">Litros de combustíveis</label>
+        <input type="number" id="iLitroCom" placeholder="12" required>
+        <br>
+        <label for="iValorLi">Valor do litro</label>
+        <input type="number" id="iValorLi" placeholder="4,12" required>
+    </form>
+    <br>
+    <div class="botao">
+        <button type="button" style="font-size: 18px;margin-left: 70px;" onclick="calcularViagem('iviagem')">Calcular Viagem</button>
+    </div>
+    <br>
+    <div style="margin-left: 70px;">
+        <p id="parte1">Em sua viagem para:</p>
+        <p id="parte2">Você percorreu #xKm e gastou #xlts de combustível</p>
+        <p id="parte3">Seu carro fez #xkmporlitros e sua viagem teve um custo de R$ #x sendo #xR$ por kilometro</p>
+    </div> 
+</body>
+</html>

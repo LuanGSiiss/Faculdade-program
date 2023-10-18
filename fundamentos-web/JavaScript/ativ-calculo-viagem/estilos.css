@@ -1,0 +1,29 @@
+form {
+    width: 650px;
+    margin-left: 10px;
+    height: 170px;
+    background-color: darkgray;
+
+}
+label, input {
+    margin-top: 12px;
+    font-size: 24px;
+    width: 300px;
+    margin: 3px 0;
+}
+label {
+    margin-left: 15px;
+    display: block;
+    float: left; 
+}
+input {
+    width: 300px;
+}
+div {
+    font-size: 18px;
+}
+.botao {
+    margin-left: 10px;
+    width: 700px;
+    text-align: right;    
+}
