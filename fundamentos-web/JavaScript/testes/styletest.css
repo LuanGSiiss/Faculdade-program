@@ -1,0 +1,17 @@
+.grade-conteiner {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: aquamarine;
+    border: 10px solid;
+    border-color: aqua;
+    column-gap: 10px;
+    row-gap: 5px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.grade-item {
+    border-color: black;
+    border: 2px solid;
+    font-size: 60px;
+    text-align: center;
+}
