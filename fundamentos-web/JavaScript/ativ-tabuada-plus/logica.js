@@ -1,6 +1,6 @@
 function comescolha() {
     document.getElementById('comescolha').innerHTML = '<label for="persona">1 até </label><input type="number" id="persona" name="persona" required>';
-    document.getElementById('botao').innerHTML =  '<button type="button"' + 'onclick=' + '"tabuada02' + "('inum','dresultado','persona')" + '>Calcular Tabuada</button>';  
+    document.getElementById('botao').innerHTML =  `<button type="button" onclick="tabuada02('inum','dresultado','persona')">Calcular Tabuada</button>`;  
 }
 function tabuada01() {
     let num = parseInt(document.getElementById('inum').value);
@@ -21,4 +21,3 @@ function tabuada02() {
     }
     document.getElementById('dresultado').innerHTML = resultado;   
 }
-botao
