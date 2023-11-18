@@ -1,0 +1,15 @@
+{
+    "name": "Carlo",
+    "idade": 24,
+    "car": null,
+    "telefones": [
+        {
+            "id": 1,
+            "numero": "4799135354"
+        },
+        {
+            "id": 2,
+            "numero": "47991352342"
+        }
+    ]
+}
