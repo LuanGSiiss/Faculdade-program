@@ -1,0 +1,91 @@
+/*imagens mobile*/
+@media (max-width: 728px) {
+    .caixaunidavi {
+      width: 100%;
+    }
+    img[src="img/UNIDAVI-foto.jpg"] {
+      width: 90%;
+    }
+    img[src="img/UNIDAVI-foto.jpg"]:hover {
+      width: 95%;
+    }
+    .caixaprof {
+      width: 100%;
+    }
+    img[src="img/Sandro-Alengar.webp"] {
+      width: 50%;
+    }
+  
+    img[src="img/Sandro-Alengar.webp"]:hover {
+      width: 60%;
+    }
+    .description {
+      background-color: rgb(233, 226, 232);
+    }
+    .dadospessoais {
+      display: flex;
+      flex-direction: column;
+    }
+    .description {
+        width: 95%;
+        background-color: blueviolet;
+        color: red;
+        font-family: "Courier New", Courier, monospace;
+        margin-top: 50px;
+        padding-left: 10px;
+    }
+  }
+  
+  /*imagens desktop*/
+@media (min-width: 729px) {
+    body {
+        background-color: aquamarine;
+    }
+    h1 {
+        color: orangered;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 40px;
+        text-align: center;
+    }
+    .dadospessoais {
+        color: rgb(24, 32, 49);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    th,td {
+        text-align: left;
+        border: solid 1px black;
+    }
+    tr:hover {
+        background-color: gray;
+        color: blue;
+        font-size: 18px;
+    }
+    .description {
+        width: 95%;
+        background-color: rgb(226, 233, 230);
+        color: red;
+        font-family: "Courier New", Courier, monospace;
+        margin-top: 50px;
+        padding-left: 10px;
+    }
+    /*imagens*/
+    .caixaunidavi {
+        width: 100%;
+    }
+    img[src="img/UNIDAVI-foto.jpg"] {
+        width: 55%;
+    }
+    img[src="img/UNIDAVI-foto.jpg"]:hover {
+        width: 60%;
+    }
+    .caixaprof {
+        width: 100%;
+    }
+    img[src="img/Sandro-Alengar.webp"] {
+        width: 20%;
+    }
+    img[src="img/Sandro-Alengar.webp"]:hover {
+        width: 25%;
+    }
+  }
+  

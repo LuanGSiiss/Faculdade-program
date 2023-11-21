@@ -21,7 +21,7 @@ tr:hover {
     font-size: 18px;
 }
 .description {
-    background-color: aqua;
+    background-color: rgb(226, 233, 230);
     color: red;
     font-family: 'Courier New', Courier, monospace;
 }
