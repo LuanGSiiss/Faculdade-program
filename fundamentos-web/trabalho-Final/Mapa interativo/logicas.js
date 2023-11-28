@@ -113,13 +113,27 @@ function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
 }
 
+//Abrir uma pagina nova
+function novaJanela(url) {
+    window.open(url, '_blanck', 'toolbar=0, location=0,menubar=0');
+}
+
 //TESTES!!!!!!!!
-function teste() {
-    var pi = "<li>Tome</li> <li>dale</li>";
-    document.getElementById("teste").innerHTML = pi;
+function teste(i) { 
+    if (i = "36") {
+        document.getElementById('teste').innerHTML = "OKOKOKOKOK";        
+    }    
+}
+
+//Função para chamar a função para no final puxar a função
+function chamaPAI() {
+    teste(id);
 }
 
 
+
+
+//Faz a interação do click
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
