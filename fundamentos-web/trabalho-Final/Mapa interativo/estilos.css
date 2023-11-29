@@ -9,7 +9,7 @@ html, body {
     max-height: 100%;
 }
 
-/*controle também precisa de alguns estilos CSS para ficar bonito*/
+/*Adiciona alguns estilos a legenda superior direita do mapa*/
 .info {
     padding: 6px 8px;
     font: 14px/16px Arial, Helvetica, sans-serif;
@@ -23,7 +23,7 @@ html, body {
     color: #777;
 }
 
-/*Estilos CSS para o controle*/
+/*Estilos CSS para legenda inferior direita, onde mostra as cores com relação a densidade*/
 .legend {
     line-height: 18px;
     color: #555;
