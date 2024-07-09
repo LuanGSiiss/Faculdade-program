@@ -1,6 +1,7 @@
 --------------------------   INSERINDO TODOS OS DADOS DAS TABELAS   --------------------------
 -- TEM QUE EXECUTAR AS INSERÇÕES DE:
 -- 
+--
 
 
 --------------------------   INSERINDO OS GRUPOS   --------------------------
@@ -382,7 +383,9 @@ INSERT INTO PRODUTO_OBSERVACAO(pro_sequencia, obs_sequencia) VALUES(30, 1); -- 3
 INSERT INTO PRODUTO_OBSERVACAO(pro_sequencia, obs_sequencia) VALUES(30, 3); -- 30 MOLHO BARBECUE
 
 
--- TABELA ASSOCIATIVA COMBO_PRODUTO
+
+------ TABELA ASSOCIATIVA COMBO_PRODUTO
+
 
 --Combo Madero Simples
 INSERT INTO COMBO_PRODUTO(cmb_sequencia, pro_sequencia) VALUES(1, 1); -- PRINCIPAL
@@ -616,5 +619,227 @@ INSERT INTO COMBO_PRODUTO(cmb_sequencia, pro_sequencia) VALUES(42, 37); -- SUCO 
 INSERT INTO COMBO_PRODUTO(cmb_sequencia, pro_sequencia) VALUES(42, 38); -- SUCO DE UVA
 
 
--- TABELA ASSOCIATIVA PRODUTO_INGREDIENTE *Necessario Executar
+
+------ TABELA ASSOCIATIVA PRODUTO_INGREDIENTE
+
+
+--Madero
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(1, 9, 1); -- Hamburguer 180g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(1, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(1, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(1, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(1, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(1, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(1, 20, 1); -- Temperos
+
+--Madero Super
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(2, 9, 2); -- Hamburguer 180g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(2, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(2, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(2, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(2, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(2, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(2, 20, 1); -- Temperos
+
+--Madero Bacon
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(3, 9, 1); -- Hamburguer 180g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(3, 14, 1); -- Bancon
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(3, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(3, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(3, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(3, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(3, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(3, 20, 1); -- Temperos
+
+--Madero Bacon Super
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(4, 9, 2); -- Hamburguer 180g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(4, 14, 1); -- Bancon
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(4, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(4, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(4, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(4, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(4, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(4, 20, 1); -- Temperos
+
+--Junior
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(5, 10, 1); -- Hamburguer 130g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(5, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(5, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(5, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(5, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(5, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(5, 20, 1); -- Temperos
+
+--Junior Bacon
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(6, 10, 1); -- Hamburguer 130g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(6, 14, 1); -- Bancon
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(6, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(6, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(6, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(6, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(6, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(6, 20, 1); -- Temperos
+
+--Cordeiro
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(7, 9, 1); -- Hamburguer 180g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(7, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(7, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(7, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(7, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(7, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(7, 20, 1); -- Temperos
+
+--Cordeiro Super
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(8, 9, 2); -- Hamburguer 180g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(8, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(8, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(8, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(8, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(8, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(8, 20, 1); -- Temperos
+
+--Cordeiro Bacon
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(9, 9, 1); -- Hamburguer 180g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(9, 14, 1); -- Bancon
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(9, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(9, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(9, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(9, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(9, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(9, 20, 1); -- Temperos
+
+--Madero Vegetariano
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 11, 1); -- Hamburguer 110g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 15, 1); -- Cogumelo-de-paris
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 16, 1); -- Feijao rosinha
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 17, 1); -- Grao-de-bico
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 18, 1); -- Arroz integral
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 19, 1); -- proteina de ervilha
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 21, 1); -- Especiarias
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 22, 1); -- Espassante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 6, 1); -- Tomate seco
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 8, 1); -- Maionese artesanal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(10, 23, 1); -- Molho de pimentas-verdes
+
+--Madero vegano
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 11, 1); -- Hamburguer 110g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 15, 1); -- Cogumelo-de-paris
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 16, 1); -- Feijao rosinha
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 17, 1); -- Grao-de-bico
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 18, 1); -- Arroz integral
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 19, 1); -- proteina de ervilha
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 21, 1); -- Especiarias
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 22, 1); -- Espassante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 6, 1); -- Tomate seco
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 24, 1); -- Creme de palmito
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(11, 23, 1); -- Molho de pimentas-verdes
+
+--Falafel Vegetariano
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 12, 1); -- Hamburguer 100g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 15, 1); -- Cogumelo-de-paris
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 16, 1); -- Feijao rosinha
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 17, 1); -- Grao-de-bico
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 18, 1); -- Arroz integral
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 19, 1); -- proteina de ervilha
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 21, 1); -- Especiarias
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 22, 1); -- Espassante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(12, 8, 1); -- Maionese artesanal
+
+--Falafel Vegano
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 12, 1); -- Hamburguer 100g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 15, 1); -- Cogumelo-de-paris
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 16, 1); -- Feijao rosinha
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 17, 1); -- Grao-de-bico
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 18, 1); -- Arroz integral
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 19, 1); -- proteina de ervilha
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 21, 1); -- Especiarias
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 22, 1); -- Espassante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(13, 24, 1); -- Creme de palmito
+
+--Cheeseburger madero fit
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(14, 10, 1); -- Hamburguer 130g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(14, 2, 1); -- Pao Crocante integral
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(14, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(14, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(14, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(14, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(14, 24, 1); -- Creme de palmito
+
+--Cheeseburger madero menos sal
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(15, 9, 1); -- Hamburguer 180g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(15, 2, 1); -- Pao Crocante integral
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(15, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(15, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(15, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(15, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(15, 24, 1); -- Creme de palmito
+
+--Cheese chicken fit
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(16, 27, 1); -- Peito de frango 130g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(16, 2, 1); -- Pao Crocante integral
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(16, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(16, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(16, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(16, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(16, 24, 1); -- Creme de palmito
+
+--Choripan
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(17, 25, 1); -- linguicinha artesanal 130g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(17, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(17, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(17, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(17, 26, 1); -- Vinagrete
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(17, 8, 1); -- Maionese artesanal
+
+--Cheese chicken crispy
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(18, 28, 1); -- 2 Peitos de frango 140g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(18, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(18, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(18, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(18, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(18, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(18, 8, 1); -- Maionese artesanal
+
+--Cheese chicken grelhado
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(19, 27, 1); -- Peito de frango 130g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(19, 1, 1); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(19, 20, 1); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(19, 4, 1); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(19, 5, 1); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(19, 7, 1); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(19, 8, 1); -- Maionese artesanal
+
+--2 Mini cheeseburgers
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(20, 13, 2); -- hamburger 45g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(20, 1, 2); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(20, 20, 2); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(20, 4, 2); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(20, 5, 2); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(20, 7, 2); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(20, 8, 2); -- Maionese artesanal
+
+--2 Mini cheesebacons
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 13, 2); -- hamburger 45g
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 14, 2); -- bacon
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 1, 2); -- Pao Crocante
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 20, 2); -- Temperos
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 4, 2); -- Alface
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 5, 2); -- Tomate
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 7, 2); -- Queijo Cheddar
+INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 8, 2); -- Maionese artesanal
+
 
