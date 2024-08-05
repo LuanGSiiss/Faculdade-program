@@ -843,3 +843,4 @@ INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES
 INSERT INTO PRODUTO_INGREDIENTE(pro_sequencia, ing_sequencia, quantidade) VALUES(21, 8, 2); -- Maionese artesanal
 
 
+------ TABELA ASSOCIATIVA PEDIDO_PRODUTO_COMBO
