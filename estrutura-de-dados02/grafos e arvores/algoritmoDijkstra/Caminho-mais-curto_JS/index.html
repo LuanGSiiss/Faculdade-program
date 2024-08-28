@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema para calculo do caminho mais curto entre dois pontos</h1>
+    <form action="desenvolvendo.js">
+        <p>
+            <label for="cid_origem">Cidade de Origem</label>
+            <select name="cid_origem" id="cid_origem">
+            </select>
+        </p>
+        <p>
+            <label for="cid_destino">Cidade de Destino</label>
+            <select name="cid_destino" id="cid_destino">
+            </select>
+        </p>
+
+        <button type="button" onclick="executarCodigo()">Calcular Rota</button>
+    </form>
+    <p id="melhor_rota">
+
+    </p>
+</body>
+<script src="desenvolvendo.js"></script>
+<script>
+    //Criação das opções de cidades no PAGINA HTML com base no objeto cidadesExtenso
+
+    // Obtém a referência ao elemento <select>
+    const selectOrigem = document.getElementById('cid_origem')
+    const selectDestino = document.getElementById('cid_destino')
+
+    
+    // Cria um array de pares chave-valor e ordena pelo valor
+    const cidadesOrdenadas = Object.entries(cidadesExtenso).sort((a, b) => a[1].localeCompare(b[1]))
+
+    // funcao para criar as opcoes
+    const criaOp = (key, value, select) => {
+        const option = document.createElement('option')
+        option.value = key
+        option.textContent = value
+        select.appendChild(option)
+    }
+    // Adiciona as opções ao <select>
+    cidadesOrdenadas.forEach(([key, value]) => {
+        criaOp(key, value, selectOrigem)  // opcoes de origem
+        criaOp(key, value, selectDestino) // opcoes de destino
+    });
+</script>
+</html>
