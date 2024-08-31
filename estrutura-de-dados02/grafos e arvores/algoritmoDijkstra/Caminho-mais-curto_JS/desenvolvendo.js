@@ -1,35 +1,10 @@
-const cidadesExtenso = {
-    'SA': 'Salete',
-    'WI': 'Witmarsum',
-    'PG': 'Presidente Getúlio',
-    'DE': 'Dona Emma',
-    'JB': 'José Boiteux',
-    'IB': 'Ibirama',
-    'LO': 'Lontras',
-    'PN': 'Presidente Nereu',
-    'VR': 'Vidal Ramos',
-    'IM': 'Imbuia',
-    'IT': 'Ituporanga',
-    'PE': 'Petrolândia',
-    'CL': 'Chapadão do Lageado',
-    'AU': 'Aurora',
-    'AL': 'Agrolândia',
-    'TC': 'Trombudo Central',
-    'AG': 'Agronômica',
-    'PR': 'Pouso Redondo',
-    'BT': 'Braço do Trombudo',
-    'LA': 'Laurentino',
-    'RO': 'Rio do Oeste',
-    'TA': 'Taió',
-    'MD': 'Mirim Doce',
-    'RS': 'Rio do Sul',
-}
-
 const vertices = [
     'SA', 'WI', 'PG', 'DE', 'JB', 'IB', 'LO', 'PN', 'VR',
     'IM', 'IT', 'PE', 'CL', 'AU', 'AL', 'TC', 'AG', 'PR',
     'BT', 'LA', 'RO', 'TA', 'MD', 'RS'
 ]
+
+// Lista de adjacencia junto com os custos
 const distancias = {
     'SA': { 'WI': 54.34, 'DE': 75.46, 'TA': 19.01 }, // Salete
     'WI': { 'SA': 54.34, 'PG': 28.50, 'DE': 20.50, 'JB': 55.88 }, // Witmarsum
@@ -58,64 +33,91 @@ const distancias = {
 }
 
 
-// -------- outra parte
+const cidadesExtenso = {
+    'SA': 'Salete',
+    'WI': 'Witmarsum',
+    'PG': 'Presidente Getúlio',
+    'DE': 'Dona Emma',
+    'JB': 'José Boiteux',
+    'IB': 'Ibirama',
+    'LO': 'Lontras',
+    'PN': 'Presidente Nereu',
+    'VR': 'Vidal Ramos',
+    'IM': 'Imbuia',
+    'IT': 'Ituporanga',
+    'PE': 'Petrolândia',
+    'CL': 'Chapadão do Lageado',
+    'AU': 'Aurora',
+    'AL': 'Agrolândia',
+    'TC': 'Trombudo Central',
+    'AG': 'Agronômica',
+    'PR': 'Pouso Redondo',
+    'BT': 'Braço do Trombudo',
+    'LA': 'Laurentino',
+    'RO': 'Rio do Oeste',
+    'TA': 'Taió',
+    'MD': 'Mirim Doce',
+    'RS': 'Rio do Sul',
+}
+
+
+// função main
 
 function encontrarRota(atual, fim) {
     // cria um objeto e deixa todos com valor infinito
     const naoVisitado = {};
-    vertices.forEach(node => {
-        naoVisitado[node] = Infinity
+    vertices.forEach(nos => {
+        naoVisitado[nos] = Infinity
     })
 
     let atualDistancia = 0
     naoVisitado[atual] = atualDistancia
     
+    // Cria os objetos que vão guardar os nós já visitados e os predecessores dos nós
     const visitado = {}
-    const pais = {}
+    const predecessores = {}
 
+    // Loop vai se repetir enquanto estiver nós não visitados
     while (Object.keys(naoVisitado).length > 0) {
-        //acha o vertice com menor valor
+        //acha o nó não visitado com menor distancia estimada
         let minVertex = Object.keys(naoVisitado).reduce((a, b) => 
             naoVisitado[a] < naoVisitado[b] ? a : b
         )
     
-        // Olha os vizinhos e decido o proximo com menor valor
+        // Olha os vizinhos e decido o proximo com menor valor; Está fazendo o "Relaxamento"
         for (const [vizinho, distancia] of Object.entries(distancias[minVertex])) {
-            if (!(vizinho in naoVisitado)) { // se o vizinho nao esta no naoVistado, entao sai do loop, ja que ele serve para mexer nos nao visitados
+            if (!(vizinho in naoVisitado)) { // se o vizinho nao esta no naoVistado, então todos os adjacentes de minVertex estão visitados
                 continue
             }
+
+            // somando a distancia do minVertex + a areste com seu vizinho 
             const novaDistancia = naoVisitado[minVertex] + distancia
+
             if (naoVisitado[vizinho] === Infinity || naoVisitado[vizinho] > novaDistancia) {
                 naoVisitado[vizinho] = novaDistancia
-                pais[vizinho] = minVertex
+                predecessores[vizinho] = minVertex    // Guardando os predecessores
             }
         }
 
+        // Remove o elemento dos naovisitado(colocando como "fechado") e também atualiza a distancia estimada
         visitado[minVertex] = naoVisitado[minVertex]
         delete naoVisitado[minVertex]
 
         if (minVertex === fim) {
             break
         }
-
-        //adiciona os vertices canditados
-        let [proxVertice, proxDistancia] = Object.entries(naoVisitado).reduce((a, b) => 
-            a[1] < b[1] ? a : b
-        )
-        atual = proxVertice
-        atualDistancia = proxDistancia
     }
 
-    return {pais, visitado}
+    return {predecessores, visitado}
 }
 
-// -------- Gerar caminho
+//  Gera o caminho ao usar o nó de destino e retroceder
 
-function geracaoCaminho(pais, inicio, fim) {
+function geracaoCaminho(predecessores, inicio, fim) {
     const caminho = [fim]
 
     while (true) {
-        const key = pais[caminho[0]]
+        const key = predecessores[caminho[0]]
         caminho.unshift(key)
         if (key === inicio) {
             break
@@ -125,20 +127,27 @@ function geracaoCaminho(pais, inicio, fim) {
     return caminhoCidades.join(' -> ')
 }
 
+
+
 // agrupados para ser possível executada-las num chamar de função
 function executarCodigo() {
+    // define o inicio e fim com base nos inputs da pagina
     const inicio = document.getElementById('cid_origem').value
     const fim = document.getElementById('cid_destino').value
 
     const resultado = document.getElementById('melhor_rota')
 
-    const {pais, visitado} = encontrarRota(inicio, fim)
+    if (inicio == fim) {
+        resultado.innerText = `O caminho mais curto:  ${cidadesExtenso[inicio]}`
+    } else {
+        const {predecessores, visitado} = encontrarRota(inicio, fim)
 
-    console.log(pais)
+    console.log(predecessores)
     console.log(visitado)
 
-    const caminhoFinal = geracaoCaminho(pais, inicio, fim)
+    const caminhoFinal = geracaoCaminho(predecessores, inicio, fim)
     resultado.innerText = `O caminho mais curto:  ${caminhoFinal}` // Para mostrar no site
     console.log(`O caminho mais curto: ${caminhoFinal}`)
+    }
 }
 
