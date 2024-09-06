@@ -140,7 +140,7 @@ SELECT PAIS, ROUND((VALOR / (SELECT SUM(VALOR) FROM dezmais)* 100), 2) AS PERCEN
 	FROM dezmais;
 	
 
--- Outros exercicios feitos com a idea do anteriores
+--   Outros exercicios feitos com a ideia dos anteriores
 
 -- 1. Listar as cidades que mais compraram no ano de 2012 e 2013
 
@@ -182,6 +182,3 @@ SELECT PAI.nome AS PAIS
 	GROUP BY 1
 	HAVING COUNT(DISTINCT EXTRACT(MONTH FROM DATA_PEDIDO)) = 12
 	ORDER BY 1;
-	
-		
-	

@@ -15,15 +15,3 @@ INNER JOIN PAIS ON PAIS.PAI_CODIGO = AEROPORTO.PAI_CODIGO
 INNER JOIN CONTINENTE ON CONTINENTE.CNT_CODIGO = PAIS.CNT_CODIGO
 WHERE PERIODO.ANO = 2021 AND CONTINENTE.CNT_CODIGO = 2;
 
--- Listar o nome das companhias que voaram em 2021 e dos países que tiveram voos em 2020. (União)
-
-
-
-SELECT * FROM aeroporto;
-SELECT * FROM continente;
-SELECT * FROM empresa;
-SELECT * FROM grupo;
-SELECT * FROM nacionalidade;
-SELECT * FROM natureza;
-SELECT * FROM pais;
-SELECT * FROM periodo;

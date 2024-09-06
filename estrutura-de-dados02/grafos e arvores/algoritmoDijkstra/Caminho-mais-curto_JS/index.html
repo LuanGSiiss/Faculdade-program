@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Caminho Mais Curto</title>
 </head>
 <body>
-    <h1>Sistema para calculo do caminho mais curto entre dois pontos</h1>
-    <form action="desenvolvendo.js">
+    <h1>Caminho mais curto</h1>
+    <p>Sistema para calculo do menor caminho entre dois pontos usando como base o algoritmo Dijkstra</p>
+    <form action="#">
         <p>
             <label for="cid_origem">Cidade de Origem</label>
             <select name="cid_origem" id="cid_origem">
@@ -25,7 +26,7 @@
 
     </p>
 </body>
-<script src="desenvolvendo.js"></script>
+<script src="caminhoMaisCurtoCidade.js"></script>
 <script>
     //Criação das opções de cidades no PAGINA HTML com base no objeto cidadesExtenso
 
@@ -48,6 +49,6 @@
     cidadesOrdenadas.forEach(([key, value]) => {
         criaOp(key, value, selectOrigem)  // opcoes de origem
         criaOp(key, value, selectDestino) // opcoes de destino
-    });
+    })
 </script>
 </html>
