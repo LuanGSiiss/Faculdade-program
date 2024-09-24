@@ -1,2 +1,0 @@
-Arrumar a questão de se for selecionado o mesmo ponto de origem e destino a pagina trava
-Fazer com que por padrão o select não fique selecionado em uma cidade, também validar para não ocorrer erros caso seja feito um envio nesse estado.
