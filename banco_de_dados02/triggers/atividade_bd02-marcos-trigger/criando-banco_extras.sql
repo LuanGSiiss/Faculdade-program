@@ -157,4 +157,35 @@ CREATE TABLE IF NOT EXISTS parcelas (
 	CONSTRAINT fk_atendimento_sequencia FOREIGN KEY(atendimento_sequencia) 
 		REFERENCES atendimento(atendimento_sequencia)
 );
+
+CREATE TABLE IF NOT EXISTS fornecedor (
+	fornecedor_codigo SERIAL NOT NULL,
+	razao VARCHAR(150) NOT NULL,
+	contato VARCHAR(100) NOT NULL,
+	CONSTRAINT pk_fornecedor_codigo PRIMARY KEY(fornecedor_codigo)
+);
+
+CREATE TABLE IF NOT EXISTS pedido (
+	pedido_numero SERIAL NOT NULL,
+	data DATE NOT NULL,
+	valor NUMERIC(10, 2) NOT NULL,
+	situacao VARCHAR(100) NOT NULL, -- 'Pendente' , 'Aprovado' , 'Entregue'
+	fornecedor_codigo INTEGER NOT NULL,
+	CONSTRAINT pk_pedido_numero PRIMARY KEY(pedido_numero),
+	CONSTRAINT fk_fornecedor_codigo FOREIGN KEY(fornecedor_codigo)
+		REFERENCES fornecedor(fornecedor_codigo)
+);
+
+CREATE TABLE IF NOT EXISTS pedido_produto (
+	pedido_produto_sequencia INTEGER NOT NULL,
+	pedido_numero INTEGER NOT NULL,
+	produto_codigo INTEGER NOT NULL,
+	quantidade INTEGER NOT NULL,
+	CONSTRAINT pk_pedido_produto_sequencia PRIMARY KEY(pedido_produto_sequencia),
+	CONSTRAINT fk_pedido_numero FOREIGN KEY(pedido_numero)
+		REFERENCES pedido(pedido_numero),
+	CONSTRAINT fk_produto_codigo FOREIGN KEY(produto_codigo)
+		REFERENCES produto(produto_codigo)
+	
+);
 END;

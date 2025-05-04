@@ -1,51 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <title>Caminho Mais Curto</title>
 </head>
 <body>
-    <h1>Caminho mais curto</h1>
-    <p>Sistema para calculo do menor caminho entre dois pontos usando como base o algoritmo Dijkstra</p>
-    <form action="#">
-        <p>
-            <label for="cid_origem">Cidade de Origem</label>
-            <select name="cid_origem" id="cid_origem">
-            </select>
-        </p>
-        <p>
-            <label for="cid_destino">Cidade de Destino</label>
-            <select name="cid_destino" id="cid_destino">
-            </select>
-        </p>
+    <main class="main-content">
+        <h1>Caminho Mais Curto</h1>
+        <p>Site para calcular o menor caminho entre dois pontos usando como base o algoritmo Dijkstra.</p>
+        <form action="#">
+            <p>
+                <label for="cid_origem">Cidade de Origem</label>
+                <select name="cid_origem" id="cid_origem">
+                    <!-- Aqui vai as cidades -->
+                </select>
+            </p>
+            <p>
+                <label for="cid_destino">Cidade de Destino</label>
+                <select name="cid_destino" id="cid_destino">
+                    <!-- Aqui vai as cidades -->
+                </select>
+            </p>
 
-        <button type="button" onclick="executarCodigo()">Calcular Rota</button>
-    </form>
-    <p id="melhor_rota">
-
-    </p>
+            <button type="button" onclick="executarCodigo()">Calcular Rota</button>
+        </form>
+        <p id="melhor_rota">
+            <!-- Será apresentado a melhor rota -->
+        </p>
+    </main>
 </body>
 <script src="caminhoMaisCurtoCidade.js"></script>
 <script>
     //Criação das opções de cidades no PAGINA HTML com base no objeto cidadesExtenso
 
-    // Obtém a referência ao elemento <select>
     const selectOrigem = document.getElementById('cid_origem')
     const selectDestino = document.getElementById('cid_destino')
 
-    
-    // Cria um array de pares chave-valor e ordena pelo valor
     const cidadesOrdenadas = Object.entries(cidadesExtenso).sort((a, b) => a[1].localeCompare(b[1]))
 
-    // funcao para criar as opcoes
     const criaOp = (key, value, select) => {
         const option = document.createElement('option')
         option.value = key
         option.textContent = value
         select.appendChild(option)
     }
-    // Adiciona as opções ao <select>
+
     cidadesOrdenadas.forEach(([key, value]) => {
         criaOp(key, value, selectOrigem)  // opcoes de origem
         criaOp(key, value, selectDestino) // opcoes de destino

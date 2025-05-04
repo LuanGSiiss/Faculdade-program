@@ -64,7 +64,7 @@ const cidadesExtenso = {
 // função main
 
 function encontrarRota(atual, fim) {
-    // cria um objeto e deixa todos com valor infinito
+    // cria um objeto e deixa todos os nos com valor infinito
     const naoVisitado = {};
     vertices.forEach(nos => {
         naoVisitado[nos] = Infinity
@@ -111,43 +111,38 @@ function encontrarRota(atual, fim) {
     return {predecessores, visitado}
 }
 
-//  Gera o caminho ao usar o nó de destino e retroceder
-
+// Cria o caminho ao pegar o nó de destino e retroceder, fazendo o caminho até o inicio
 function geracaoCaminho(predecessores, inicio, fim) {
-    const caminho = [fim]
+    const caminho = [fim];
 
     while (true) {
-        const key = predecessores[caminho[0]]
-        caminho.unshift(key)
+        const key = predecessores[caminho[0]];
+        caminho.unshift(key);
         if (key === inicio) {
-            break
+            break;
         }
     }
-    const caminhoCidades = caminho.map( e => cidadesExtenso[e] )
-    return caminhoCidades.join(' -> ')
+
+    const caminhoCidades = caminho.map( e => cidadesExtenso[e]);
+    return caminhoCidades.join(' -> ');
 }
 
 
-
-// agrupados para ser possível executada-las num chamar de função
 function executarCodigo() {
-    // define o inicio e fim com base nos inputs da pagina
-    const inicio = document.getElementById('cid_origem').value
-    const fim = document.getElementById('cid_destino').value
+    const inicio = document.getElementById('cid_origem').value;
+    const fim = document.getElementById('cid_destino').value;
 
-    const resultado = document.getElementById('melhor_rota')
+    const resultado = document.getElementById('melhor_rota');
 
     if (inicio == fim) {
-        resultado.innerText = `O caminho mais curto:  ${cidadesExtenso[inicio]}`
+        resultado.innerText = cidadesExtenso[inicio];
     } else {
-        const {predecessores, visitado} = encontrarRota(inicio, fim)
+        const {predecessores, visitado} = encontrarRota(inicio, fim);
+        console.log(predecessores);
+        console.log(visitado);
 
-    console.log(predecessores)
-    console.log(visitado)
-
-    const caminhoFinal = geracaoCaminho(predecessores, inicio, fim)
-    resultado.innerText = `O caminho mais curto:  ${caminhoFinal}` // Para mostrar no site
-    console.log(`O caminho mais curto: ${caminhoFinal}`)
+        const caminhoFinal = geracaoCaminho(predecessores, inicio, fim);
+        resultado.innerText = caminhoFinal;
     }
 }
 

@@ -17,6 +17,7 @@ SELECT * FROM SERVICO;
 SELECT * FROM ATENDIMENTO_VACINA;
 SELECT * FROM ATENDIMENTO_PRODUTO;
 SELECT * FROM ATENDIMENTO_SERVICO;
+SELECT * FROM PEDIDO_PRODUTO;
 
 -- VACINA
 --ATENDIMENTO 
@@ -88,16 +89,20 @@ INSERT INTO tipo(descricao, desconto) VALUES
 
 -- PRODUTO
 INSERT INTO produto(descricao, valor, estoque, categoria_codigo) VALUES
-	('Coleira de Chachorro M', 45.0, 5, 1),
-	('Arranhador Caixa 25/25', 150, 3, 2);
+	('Coleira de Chachorro M', 45.0, 8, 1),
+	('Arranhador Caixa 25/25', 150, 5, 2);
 
 INSERT INTO servico(descricao, valor, tipo_codigo) VALUES
 	('Banho e Tosa', 110, 1),
 	('Tratamento Contra Vermes', 370, 2);
 
+-- FORNECEDOR
+INSERT INTO fornecedor(razao, contato) VALUES
+	('GerSiis', '47999823722');
 
-
-
+-- PEDIDO
+INSERT INTO pedido(data, valor, situacao, fornecedor_codigo) VALUES
+	(current_date, 240, 'Pendente', 1); -- 2 codigo 1, 1 codigo 2
 
 --  ATENDIMENTO_PRODUTO, AQUI TEM TRIGGER!!!
 
@@ -139,4 +144,31 @@ UPDATE atendimento SET situacao_codigo = 2
 UPDATE atendimento SET situacao_codigo = 2
 	WHERE animal_codigo = 3;
 
+
+-- PEDIDO_PRODUTO, AQUI TEM TRIGGER!!!
+INSERT INTO pedido_produto (pedido_produto_sequencia, pedido_numero, produto_codigo, quantidade)
+VALUES (11, 1, 1, 10); 
+
+UPDATE pedido_produto
+SET quantidade = 20
+WHERE pedido_numero = 1 AND produto_codigo = 1; --estoque ficou em 85 tava em 80 
+
+DELETE FROM pedido_produto
+WHERE pedido_numero = 1 AND produto_codigo = 1; --deletou o pedido estoque voltou a 100
+
+-- PARCELAS, testando a mudança de situação da parcela, AQUI TEM TRIGGER!!!
+
+SELECT * FROM parcelas;
+SELECT * FROM atendimento;
+SELECT * FROM animal;
+SELECT * FROM tutor;
+
+UPDATE parcelas SET situacao = 'Pago'
+	WHERE parcela_sequencia = 2;
+
+UPDATE parcelas SET situacao = 'Pendente'
+	WHERE parcela_sequencia = 2;
+
+UPDATE parcelas SET situacao = 'Pago'
+	WHERE parcela_sequencia = 3;
 

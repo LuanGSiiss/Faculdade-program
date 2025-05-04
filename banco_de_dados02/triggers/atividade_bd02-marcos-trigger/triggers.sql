@@ -38,7 +38,7 @@ DECLARE
 	vCADAPARCELA NUMERIC(10,2);
 	vDATAVENCIMENTO DATE;
 BEGIN
-	IF old.situacao_codigo = 1 and new.situacao_codigo = 2 THEN -- 1 = Aberto; 2 = Fechado
+	IF old.situacao_codigo = 1 and new.situacao_codigo = 2 THEN --  Pendente , Pago
 		-- ATUALIZA SALDO DEVEDOR
 		UPDATE TUTOR SET saldodevedor = saldodevedor + new.valor
 			WHERE tutor_codigo in (SELECT tutor_codigo FROM animal
@@ -140,7 +140,7 @@ EXECUTE FUNCTION atualiza_valor_servico();
 
 -- Ao incluir/alterar/excluir produtos, atualizar o estoque;
 
---incluir
+--incluir atendimento_produto
 CREATE OR REPLACE FUNCTION atualiza_estoque_inclui()
 	RETURNS TRIGGER
 	LANGUAGE PLPGSQL
@@ -159,7 +159,7 @@ ON atendimento_produto
 FOR EACH ROW
 EXECUTE FUNCTION atualiza_estoque_inclui();
 
---update
+--update atendimento_produto
 CREATE OR REPLACE FUNCTION atualiza_estoque_altera()
 	RETURNS TRIGGER
 	LANGUAGE PLPGSQL
@@ -184,7 +184,7 @@ ON atendimento_produto
 FOR EACH ROW
 EXECUTE FUNCTION atualiza_estoque_altera();
 
---delete
+--delete atendimento_produto
 CREATE OR REPLACE FUNCTION atualiza_estoque_exclui()
 	RETURNS TRIGGER
 	LANGUAGE PLPGSQL
@@ -202,3 +202,103 @@ AFTER DELETE
 ON atendimento_produto
 FOR EACH ROW
 EXECUTE FUNCTION atualiza_estoque_exclui();
+
+
+--Atualização de estoque do produto com base no pedido-produto
+
+-- INSERT
+CREATE OR REPLACE FUNCTION atualiza_estoque_pedido_inserir()
+    RETURNS TRIGGER
+    LANGUAGE PLPGSQL
+AS
+$$
+BEGIN
+    UPDATE produto
+    SET estoque = estoque + NEW.quantidade
+    WHERE produto_codigo = NEW.produto_codigo;
+    RETURN NEW;
+END;
+$$;
+
+CREATE TRIGGER atualiza_estoque_pedido_inserir_trigger
+AFTER INSERT
+ON pedido_produto
+FOR EACH ROW
+EXECUTE FUNCTION atualiza_estoque_pedido_inserir();
+
+-- UPDATE
+CREATE OR REPLACE FUNCTION atualiza_estoque_pedido_atualizar()
+    RETURNS TRIGGER
+    LANGUAGE PLPGSQL
+AS
+$$
+BEGIN
+    IF OLD.quantidade < NEW.quantidade THEN
+        UPDATE produto
+        SET estoque = estoque + (NEW.quantidade - OLD.quantidade)
+        WHERE produto_codigo = NEW.produto_codigo;
+    ELSIF OLD.quantidade > NEW.quantidade THEN
+        UPDATE produto
+        SET estoque = estoque - (OLD.quantidade - NEW.quantidade)
+        WHERE produto_codigo = NEW.produto_codigo;
+    END IF;
+    RETURN NEW;
+END;
+$$;
+
+CREATE TRIGGER atualiza_estoque_pedido_atualizar_trigger
+AFTER UPDATE
+ON pedido_produto
+FOR EACH ROW
+EXECUTE FUNCTION atualiza_estoque_pedido_atualizar();
+
+-- DELETE
+CREATE OR REPLACE FUNCTION atualiza_estoque_pedido_excluir()
+    RETURNS TRIGGER
+    LANGUAGE PLPGSQL
+AS
+$$
+BEGIN
+    UPDATE produto
+    SET estoque = estoque - OLD.quantidade
+    WHERE produto_codigo = OLD.produto_codigo;
+    RETURN OLD;
+END;
+$$;
+
+CREATE TRIGGER atualiza_estoque_pedido_excluir_trigger
+AFTER DELETE
+ON pedido_produto
+FOR EACH ROW
+EXECUTE FUNCTION atualiza_estoque_pedido_excluir();
+
+-- Atualizar o saldo devedor do cliente, quando uma parcela for paga ou retornar como aberta;
+-- Pendente , Pago
+
+CREATE OR REPLACE FUNCTION atualiza_saldo_devedor_parcela()
+    RETURNS TRIGGER
+    LANGUAGE PLPGSQL
+AS
+$$
+BEGIN
+	IF old.situacao = 'Pendente' AND new.situacao = 'Pago' THEN
+		UPDATE TUTOR SET saldodevedor = saldodevedor - new.valor_parcela
+			WHERE tutor_codigo in (SELECT animal.tutor_codigo FROM atendimento
+								   	JOIN animal ON atendimento.animal_codigo = animal.animal_codigo
+							   		WHERE atendimento.atendimento_sequencia = new.atendimento_sequencia); 	
+	ELSEIF OLD.situacao = 'Pago' AND NEW.situacao = 'Pendente' THEN
+		UPDATE TUTOR SET saldodevedor = saldodevedor + new.valor_parcela
+			WHERE tutor_codigo in (SELECT animal.tutor_codigo FROM atendimento
+								   	JOIN animal ON atendimento.animal_codigo = animal.animal_codigo
+							   		WHERE atendimento.atendimento_sequencia = new.atendimento_sequencia);
+	END IF;
+    RETURN NEW;
+END;
+$$;
+
+CREATE TRIGGER atualiza_saldo_devedor_parcela_trigger
+AFTER UPDATE
+ON parcelas
+FOR EACH ROW
+EXECUTE FUNCTION atualiza_saldo_devedor_parcela();
+
